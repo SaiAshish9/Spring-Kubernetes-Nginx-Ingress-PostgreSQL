@@ -6,7 +6,51 @@ cG9zdGdyZXM=
 ```
 
 ```
-mvn clean install -DskipTests=true
+./mvnw clean install -DskipTests=true
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.example.k8s:springboot-postgres-k8s >---------------
+[INFO] Building springboot-postgres-k8s 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ springboot-postgres-k8s ---
+[INFO] Deleting /Users/saiashish/Desktop/sai/projects/springboot-postgres-k8s/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ springboot-postgres-k8s ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ springboot-postgres-k8s ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /Users/saiashish/Desktop/sai/projects/springboot-postgres-k8s/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ springboot-postgres-k8s ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/saiashish/Desktop/sai/projects/springboot-postgres-k8s/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ springboot-postgres-k8s ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/saiashish/Desktop/sai/projects/springboot-postgres-k8s/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ springboot-postgres-k8s ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ springboot-postgres-k8s ---
+[INFO] Building jar: /Users/saiashish/Desktop/sai/projects/springboot-postgres-k8s/target/springboot-postgres-k8s-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.3.1.RELEASE:repackage (repackage) @ springboot-postgres-k8s ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ springboot-postgres-k8s ---
+[INFO] Installing /Users/saiashish/Desktop/sai/projects/springboot-postgres-k8s/target/springboot-postgres-k8s-0.0.1-SNAPSHOT.jar to /Users/saiashish/.m2/repository/com/example/k8s/springboot-postgres-k8s/0.0.1-SNAPSHOT/springboot-postgres-k8s-0.0.1-SNAPSHOT.jar
+[INFO] Installing /Users/saiashish/Desktop/sai/projects/springboot-postgres-k8s/pom.xml to /Users/saiashish/.m2/repository/com/example/k8s/springboot-postgres-k8s/0.0.1-SNAPSHOT/springboot-postgres-k8s-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.498 s
+[INFO] Finished at: 2023-02-17T02:24:54+05:30
+[INFO] ------------------------------------------------------------------------
 ```
 
 ```
