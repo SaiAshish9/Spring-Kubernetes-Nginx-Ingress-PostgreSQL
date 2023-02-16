@@ -78,6 +78,10 @@ E0217 02:04:20.685139    8484 cache.go:188] Error downloading kic artifacts:  fa
 ```
 
 ```
+eval $(minikube docker-env) 
+```
+
+```
 docker build -t springboot-postgres-k8s:1.0 .
 [+] Building 3.4s (7/7) FINISHED                                                
  => [internal] load build definition from Dockerfile                       0.0s
