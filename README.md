@@ -212,4 +212,6 @@ postgres
 employee
 
 select * from employee;
+
+kubectl describe pod springboot-postgres-k8s-59955ddcf8-96bzb
 ```
