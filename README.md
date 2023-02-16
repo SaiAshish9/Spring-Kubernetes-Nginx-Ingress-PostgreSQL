@@ -98,6 +98,31 @@ Use 'docker scan' to run Snyk tests against images to find vulnerabilities and l
 ```
 
 ```
+docker run springboot-postgres-k8s:1.0       
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+2023-02-16 20:56:08.645  INFO 1 --- [           main] c.s.k.s.SpringbootPostgresK8sApplication : Starting SpringbootPostgresK8sApplication v0.0.1-SNAPSHOT on f943f0544703 with PID 1 (/app.jar started by root in /)
+2023-02-16 20:56:08.647  INFO 1 --- [           main] c.s.k.s.SpringbootPostgresK8sApplication : No active profile set, falling back to default profiles: default
+2023-02-16 20:56:09.573  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2023-02-16 20:56:09.688  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101ms. Found 1 JPA repository interfaces.
+2023-02-16 20:56:10.420  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-16 20:56:10.443  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-16 20:56:10.444  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-02-16 20:56:10.517  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-16 20:56:10.517  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1821 ms
+2023-02-16 20:56:10.752  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-16 20:56:10.760  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-16 20:56:12.292  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+```
+
+```
 
 kubectl apply -f postgres-credentials.yml
 secret/postgres-credentials created
