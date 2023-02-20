@@ -317,7 +317,7 @@ sudo nano /etc/hosts
 
 192.168.49.2 springboot-ingress-k8s.info
 
-http://springboot-postgress-k8s.info/greeting
+http://springboot-k8s.info/greeting
 
 k8s
 
