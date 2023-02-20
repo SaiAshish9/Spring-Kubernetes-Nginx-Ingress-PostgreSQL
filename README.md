@@ -275,7 +275,8 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/v0.9.3/manifests/name
 
 kubectl apply -f https://raw.githubusercontent.com/metallb/v0.9.3/manifests/metallb.yaml
 
-kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(opensssl rand -base64 128)"
+kubectl create secret generic -n metallb-system memberlist 
+--from-literal=secretkey="$(opensssl rand -base64 128)"
 
 kubectl get namespaces
 
