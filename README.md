@@ -215,3 +215,7 @@ select * from employee;
 
 kubectl describe pod springboot-postgres-k8s-59955ddcf8-96bzb
 ```
+
+<img width="564" alt="Screenshot 2023-02-19 at 10 05 11 AM" src="https://user-images.githubusercontent.com/43849911/220002232-90ae6c64-e6d8-4e87-811a-d377a4630ce9.png">
+
+
