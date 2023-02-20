@@ -327,4 +327,36 @@ ingress.class : nginx
 
 <img width="564" alt="Screenshot 2023-02-19 at 10 05 11 AM" src="https://user-images.githubusercontent.com/43849911/220002232-90ae6c64-e6d8-4e87-811a-d377a4630ce9.png">
 
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 192.168.1.240-192.168.1.250
+```
 
+```
+apiVersion: networking.k8s.io/v1beta1 # for versions before 1.14 use extensions/v1beta1
+kind: Ingress
+metadata:
+  name: example-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: springboot-ingress-k8s.info
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: springboot-postgres-k8s
+              servicePort: 8080
+```
