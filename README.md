@@ -216,6 +216,114 @@ select * from employee;
 kubectl describe pod springboot-postgres-k8s-59955ddcf8-96bzb
 ```
 
+```
+/*
+kubectl run springboot-k8s --image=springboot-k8s:1.0 --port 8080 --image-pull-policy=Never
+pod/springboot-k8s created
+*/
+```
+
+```
+Difference between clusterIP, nodePort & Load Balancer
+
+ClusterIp access services via proxy and it can can access only inside the cluster
+
+ClusterIp don't have external access, NodePort will have it and it opens
+specific port on each node of the cluster
+
+And traffic on that node is forwarded directly to the service
+
+NodePort will pick the port radomnly if not specified 30k to something
+
+Load balancer is a standard way to expose the service to internet
+
+NodePort is not recommended for exposing the service, we'll hava only one port per service
+
+Network load balancer will give one ip that will forward all traffic to the service.
+
+Ingress is an api object that will manage the external access to the services in a cluster, typically HTTP.
+
+To manage ingress, we need a ingress controller.
+
+Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. 
+
+Internet => Ingress => Services
+
+Ingress will act as the entry point and it much have a ingress controller running.
+
+Nginx controller can be used to make ingress work.
+```
+
+```
+docker build -t springboot-k8s:1.0 .
+
+brew install helm
+
+helm search nginx-ingress
+
+heml install stable/nginx-ingress --name=mg-nginx-ingress --set rbc.create=true
+ 
+for minikube, we should define a load balancer metlallb
+
+kubectl get pods
+
+heml install stable/nginx-ingress --name=mg-nginx-ingr --set rbc.create=true
+
+kubectl get all
+
+kubectl apply -f https://raw.githubusercontent.com/metallb/v0.9.3/manifests/namespace.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/metallb/v0.9.3/manifests/metallb.yaml
+
+kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(opensssl rand -base64 128)"
+
+kubectl get namespaces
+
+minikube ip
+192.168.49.2
+
+ConfigMap
+
+kubectl get all
+
+If we don't have metallb load balancer cluster-ip at get all command will be shown as null.
+
+minikube start
+
+minikube addons enable ingress
+
+minikube get pods -n kube-system
+
+Ingress resource
+
+springboot-ingress.yaml
+
+host: springboot-ingress-k8s.info
+serviceName: springboot-postgres-info
+
+kubectl get svc
+serviceName
+
+kubectl apply -f springboot-ingress.yaml
+
+kubectl get ing
+
+kubectl describe ing
+
+kubectl get all
+
+sudo nano /etc/hosts
+
+192.168.49.2 springboot-ingress-k8s.info
+
+http://springboot-postgress-k8s.info/greeting
+
+k8s
+
+ingress.class : nginx
+
+```
+
 <img width="564" alt="Screenshot 2023-02-19 at 10 05 11 AM" src="https://user-images.githubusercontent.com/43849911/220002232-90ae6c64-e6d8-4e87-811a-d377a4630ce9.png">
 
 
